@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.36
+# v0.19.40
 
 using Markdown
 using InteractiveUtils
@@ -34,7 +34,13 @@ TableOfContents()
 
 # ╔═╡ d3c4f7a6-1222-4484-8fb8-745f6e05f184
 begin
-	coast = readdlm(datadir("SEA.cst"),comments=true)
+	if !isfile(datadir("coast.cst"))
+		download(
+			"https://raw.githubusercontent.com/natgeo-wong/GeoPlottingData/main/coastline_resl.txt",
+			datadir("coast.cst")
+		)
+	end
+	coast = readdlm(datadir("coast.cst"),comments=true)
 	clon  = coast[:,1]
 	clat  = coast[:,2]
 	md"Preloading coastline data"
@@ -104,7 +110,7 @@ begin
 	    levels=range(0,1,length=2),extendlow=:auto,extendhigh=:auto
 	)
 	lines!(ax1,clon,clat,color=:black,linewidth=0.5)
-	lines!(ax2,clon,clat,color=:black,linewidth=0.5)
+	lines!(ax2,clon,clat,color=:red,linewidth=3)
 	
 	resize_to_layout!(fig)
 	fig
@@ -125,7 +131,6 @@ md"
 lsd_tst = getLandSea(tst,savelsd=false)
 
 # ╔═╡ de4a1d2c-752e-4e36-84e6-c1e21b1acb7d
-#=╠═╡
 begin
 	fig2 = Figure()
 
@@ -156,7 +161,6 @@ begin
 	resize_to_layout!(fig2)
 	fig2
 end
-  ╠═╡ =#
 
 # ╔═╡ 76867a59-5632-40b9-a769-1c4806b59a20
 md"
@@ -189,8 +193,8 @@ typeof(lsd_npd) <: GeoRegions.LandSeaFlat
 # ╟─8ad55e37-3667-4ccd-b700-15174346939b
 # ╟─38279b06-efd5-474d-ae16-5caa5342d190
 # ╠═91980a36-ee56-42d4-a7e4-4e7af283e6b7
-# ╠═58749000-f23f-4f9d-a32f-13f5abaeb908
-# ╠═19583f27-b37b-473d-a5d4-c6a4d5829c2e
+# ╟─58749000-f23f-4f9d-a32f-13f5abaeb908
+# ╟─19583f27-b37b-473d-a5d4-c6a4d5829c2e
 # ╟─b0dbdafa-74dd-4c85-8aca-989854c44704
 # ╠═35d7077f-4bb4-467f-8a1b-8544a5999303
 # ╠═3a975d77-3494-4d99-8472-b6914143ccca
