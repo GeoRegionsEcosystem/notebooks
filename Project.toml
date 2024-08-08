@@ -9,3 +9,7 @@ GeoRegions = "b001f823-fa75-4bff-bf55-6610c8f3688a"
 NASAPrecipitation = "a018b980-0677-41c0-b9a4-7f34595c2b14"
 NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
+
+[compat]
+GeoRegions = "6"
+NASAPrecipitation = "0.4.1"
