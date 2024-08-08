@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -113,14 +113,14 @@ end
 
 # ╔═╡ 84dd9d36-e84e-477a-87cf-c1d37aac2a92
 geo1 = RectRegion(
-	"", "GLB", "",
-	[45,-45,330,240], savegeo = false
+	"", "", "",
+	[45,-45,330,240], save = false
 )
 
 # ╔═╡ e7dd7079-8a5e-47bd-81b5-1a714b668560
 geo2 = RectRegion(
-	"", "GLB", "",
-	[45,-45,geo1.E-360,geo1.W-360], savegeo = false
+	"", "", "",
+	[45,-45,geo1.E-360,geo1.W-360], save = false
 )
 
 # ╔═╡ aab05668-34d1-4a5d-8040-c2eefb325231
@@ -189,10 +189,7 @@ RegionGrids can also handle scenarios where you are required to stitch data toge
 "
 
 # ╔═╡ 72b1dce2-b7ab-4178-aaf0-68a4f316347a
-geo3 = RectRegion(
-	"","GLB","",
-	[45,-45,45,-45],savegeo=false
-)
+geo3 = RectRegion("","","",[45,-45,45,-45], save=false)
 
 # ╔═╡ 02570cdd-c948-4dc8-8531-3ccd68259bbb
 begin

@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -64,10 +64,10 @@ md"
 npd = IMERGMonthly(start=Date(2017),stop=Date(2017),path=datadir())
 
 # ╔═╡ b4a60181-384f-467d-9bec-17122296da5d
-geo_SMT = RectRegion("SMT","GLB","Sumatra",[6,-6,107,95],savegeo=false)
+geo_SMT = RectRegion("SMT","GLB","Sumatra",[6,-6,107,95],save=false)
 
 # ╔═╡ 8493f2b7-154a-42b2-a02a-919a98409706
-geo_SGP = RectRegion("SGP","GLB","Singapore",[2,1,104.5,103],savegeo=false)
+geo_SGP = RectRegion("SGP","GLB","Singapore",[2,1,104.5,103],save=false)
 
 # ╔═╡ 06327987-2728-463d-bd25-b231ef276dda
 begin

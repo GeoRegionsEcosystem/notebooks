@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -97,7 +97,7 @@ md"
 "
 
 # ╔═╡ 22ea1049-31b9-4627-8f91-d68d2714fe74
-geo = RectRegion("SMT","GLB","Sumatra",[6,-6,107,95],savegeo=false)
+geo = RectRegion("SMT","GLB","Sumatra",[6,-6,107,95],save=false)
 
 # ╔═╡ 9eee56b4-1e3c-427c-aa0c-9e729e709b81
 md"Note: `savegeo = false` because we don't want to save this GeoRegion as a custom GeoRegion"

@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -86,7 +86,7 @@ geo_AR6
 
 # ╔═╡ 752b09e6-d766-4927-8c93-e5524306618d
 begin
-	blon_AR6,bplat_AR6,slon_AR6,slat_AR6 = coordGeoRegion(geo_AR6)
+	slon_AR6,slat_AR6 = coordGeoRegion(geo_AR6)
 	md"Finding the coordinates of the PolyRegion boundaries"
 end
 
@@ -114,7 +114,7 @@ Once you have defined this `GeoRegion`, let us then plot the bounds using Makie
 # ╔═╡ 158b0d84-05d5-4500-98fa-e3b2e000ccd3
 rgeo1 = RectRegion(
 	"", "GLB", "Test GeoRegion",
-	[30,20,50,10], savegeo = false
+	[30,20,50,10], save = false
 )
 
 # ╔═╡ 9eee56b4-1e3c-427c-aa0c-9e729e709b81
@@ -128,15 +128,15 @@ md"Note: `savegeo = false` because we don't want to save this GeoRegion as a cus
 
 # ╔═╡ 302126f3-6bb4-4bb9-9036-75e830970799
 begin
-	rblon1,rblat1 = coordGeoRegion(rgeo1)
-	# rblon2,rblat2 = coordGeoRegion(rgeo2)
+	rslon1,rslat1 = coordGeoRegion(rgeo1)
+	# rslon2,rslat2 = coordGeoRegion(rgeo2)
 	md"Finding the coordinates of the RectRegion boundaries"
 end
 
 # ╔═╡ 395d8f1a-94c6-4397-b7b4-2fc37cf9ff0f
 begin
-	lines!(ax1,rblon1,rblat1,color=:red,linewidth=2)
-	# lines!(ax1,rblon2,rblat2,color=:green,linewidth=2)
+	lines!(ax1,rslon1,rslat1,color=:red,linewidth=2)
+	# lines!(ax1,rslon2,rslat2,color=:green,linewidth=2)
 	fig
 end
 
@@ -152,7 +152,7 @@ pgeo1 = PolyRegion(
 	"", "GLB", "Test PolyRegion",
 	[60.0, 60.0, 75.0, 88.0, 100.0, 100.0, 95.0, 87.0, 79.0, 76.0, 70.0, 66.5, 60.0],
 	[23.5, 30.0, 30.0, 26.0, 30.0, 19.5, 19.5, 19.5, 7.0, 7.0, 19.5, 23.5, 23.5],
-	savegeo = false
+	save = false
 )
 
 # ╔═╡ bf751101-5910-4283-adf4-0fef3a83af0c
@@ -164,17 +164,15 @@ pgeo1 = PolyRegion(
 
 # ╔═╡ 341ecc4b-57f4-4e4c-b02c-e4acd9c8e6d9
 begin
-	pblon1,pblat1,pslon1,pslat1 = coordGeoRegion(pgeo1)
-	# pblon2,pblat2,pslon2,pslat2 = coordGeoRegion(pgeo2)
+	pslon1,pslat1 = coordGeoRegion(pgeo1)
+	# pslon2,pslat2 = coordGeoRegion(pgeo2)
 	md"Finding the coordinates of the PolyRegion boundaries"
 end
 
 # ╔═╡ 0b14a9cd-6731-4fa6-8920-a8c72936a224
 begin
 	lines!(ax1,pslon1,pslat1,color=:red,linewidth=2)
-	lines!(ax1,pblon1,pblat1,color=:red,linewidth=2,linestyle=:dash)
 	# lines!(ax1,pslon2,pslat2,color=:green,linewidth=2)
-	# lines!(ax1,pblonb,pblat2,color=:green,linewidth=2,linestyle=:dash)
 	fig
 end
 

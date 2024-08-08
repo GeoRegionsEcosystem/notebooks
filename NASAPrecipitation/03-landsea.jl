@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -78,7 +78,7 @@ npd_imerg = IMERGDummy(path=datadir())
 npd_trmm = TRMMDummy(path=datadir())
 
 # ╔═╡ 7e74fc21-eb8a-4218-8f92-04997217cf2c
-geo = RectRegion("BRZ","GLB","Brazil",[15,-35,330,275],savegeo=false)
+geo = RectRegion("BRZ","GLB","Brazil",[15,-35,330,275],save=false)
 
 # ╔═╡ dcb64994-c710-49b8-ad7f-ad87c41d3101
 md"
@@ -141,7 +141,7 @@ md"
 # ╔═╡ 35d7077f-4bb4-467f-8a1b-8544a5999303
 # tst = RectRegion(
 # 	"","GLB","",
-# 	[],savegeo=false
+# 	[],save=false
 # )
 
 # ╔═╡ 3a975d77-3494-4d99-8472-b6914143ccca

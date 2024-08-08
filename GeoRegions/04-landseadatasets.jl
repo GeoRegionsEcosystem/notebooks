@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.45
 
 using Markdown
 using InteractiveUtils
@@ -79,7 +79,7 @@ Let's do an example that covers Singapore (my homeland)
 # ╔═╡ 91980a36-ee56-42d4-a7e4-4e7af283e6b7
 geo = RectRegion(
 	"MLY","GLB","Malaya",
-	[5,0,105,100],savegeo=false
+	[5,0,105,100], save=false
 )
 
 # ╔═╡ 58749000-f23f-4f9d-a32f-13f5abaeb908
