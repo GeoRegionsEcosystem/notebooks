@@ -11,5 +11,5 @@ NCDatasets = "85f8d34a-cbdd-5861-8df4-14fed0d494ab"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-GeoRegions = "6"
+GeoRegions = "6.0.1"
 NASAPrecipitation = "0.4.1"
